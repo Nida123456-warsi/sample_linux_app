@@ -15,4 +15,4 @@ artifacts:
     artifact2:
       files:
         - directory/file2
-      name: secondary-artifact-name-2
+      name: secondary-artifact-name-3
