@@ -1,20 +1,18 @@
 version: 0.2
 
-phases: 
-    install:
-        runtime-versions:
-            nodejs: 10
-        commands:
-            - echo "installing something"
-    pre_build:
-        commands: 
-            - echo "we are in the pre build phase"
-    build:
-        commands:
-            - echo "we are in the build block"
-            - echo "we will run some tests"
-            - grep -Fq "Congratulations" index.html
-    post_build:
-        commands:
-            - echo "we are in the post build phase"
-            
+phases:
+build:
+  commands:
+    - echo Building...
+artifacts:
+  files:
+    - '**/*'
+  secondary-artifacts:
+    artifact1:
+      files:
+        - directory/file1
+      name: secondary-artifact-name-1
+    artifact2:
+      files:
+        - directory/file2
+      name: secondary-artifact-name-2
